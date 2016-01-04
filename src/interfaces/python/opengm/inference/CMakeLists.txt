@@ -56,7 +56,7 @@ set(INF_TARGETS
 
 
 #--------------------------------------------------------------
-# Add inference library
+# Add opengmcore library
 #--------------------------------------------------------------
 add_library(_inference SHARED  ${INF_TARGETS})
 
@@ -76,9 +76,9 @@ endif()
 
 if(LINK_RT)
     find_library(RT rt)
-    target_link_libraries(_inference ${PYTHON_LIBRARIES} ${Boost_PYTHON_LIBRARIES} _opengmcore rt)
+    target_link_libraries(_inference ${PYTHON_LIBRARIES} ${Boost_PYTHON_LIBRARIES} rt)
 else()
-    target_link_libraries(_inference ${PYTHON_LIBRARIES} ${Boost_PYTHON_LIBRARIES} _opengmcore)
+    target_link_libraries(_inference ${PYTHON_LIBRARIES} ${Boost_PYTHON_LIBRARIES})
 endif(LINK_RT)
 
 set_target_properties(_inference PROPERTIES PREFIX "")
