@@ -59,7 +59,7 @@ void export_intersection_based(){
     #endif
 
 
-    typedef opengm::proposal_gen::QpboBased<GM, opengm::Minimizer>                QpboGen;
+
 
 
     typedef opengm::proposal_gen::WeightRandomization<typename GM::ValueType> WeightRand;
@@ -117,6 +117,7 @@ void export_intersection_based(){
     {   
         setup.isDefault=false;
         const std::string genName("qpboBased");
+        typedef opengm::proposal_gen::QpboBased<GM, opengm::Minimizer>                QpboGen;
         typedef QpboGen GEN;
 
         export_intersection_based_proposal_param<GEN>(setup, genName);
