@@ -185,6 +185,10 @@ BOOST_PYTHON_MODULE_INIT(_inference) {
        	export_intersection_based<opengm::python::GmAdder,opengm::Minimizer>();
         #endif
 
+        #if !defined(NOVIGRA) && (defined(WITH_QPBO) || (defined(WITH_BLOSSOM5) && defined(WITH_PLANARITY) ) )
+        export_cgc<opengm::python::GmAdder,opengm::Minimizer>();
+        #endif
+
          //export_lp_inference<opengm::python::GmAdder,opengm::Minimizer>();
 
          #ifdef WITH_LIBDAI
